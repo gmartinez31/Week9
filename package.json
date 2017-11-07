@@ -1,0 +1,22 @@
+{
+  "name": "week9",
+  "version": "1.0.0",
+  "description": "DigitalCrafts Week 9 Coursework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmartinez31/Week9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmartinez31/Week9/issues"
+  },
+  "homepage": "https://github.com/gmartinez31/Week9#readme",
+  "dependencies": {
+    "socket.io": "^2.0.4"
+  }
+}
