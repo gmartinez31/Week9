@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/gmartinez31/Week9#readme",
   "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1",
     "socket.io": "^2.0.4"
   }
 }

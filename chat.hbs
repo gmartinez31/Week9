@@ -1,0 +1,34 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat App</title>
+</head>
+<body>
+    <input id='message' onkeypress="send_message(event)">
+    <pre id='chatbox'></pre>
+    <script src="/socket-io/socket.io.js"></script>
+    <script>
+        const server = io();
+        server.on('connect', function (s) {
+            console.log('connected');
+        });
+
+        server.on('chat-msg', function (msg) {
+                var chat = document.getElementById("chatbox");
+                chat.insertAdjacentHTML('beforeend', '\n' + msg);
+            });
+
+        function send_message(event) {
+                var char = event.which || event.keyCode;
+                if (char == '13') {
+                    var msg = document.getElementById("message");
+                    server.emit('incoming', msg.value);
+                    msg.value = '';
+                }
+            }
+    </script>
+</body>
+</html>
